@@ -1,14 +1,16 @@
 package Perpustakaan.Classes;
 
 public class Buku extends Koleksi{
-    protected int halaman;
+    protected String halaman;
     protected String isbn;
     
-    Buku(String id_koleksi, String judul, String penerbit, boolean status) {
-        super(id_koleksi, judul, penerbit, status);
+    public Buku(String judul, String penerbit, String isbn, String halaman) {
+        super(judul, penerbit);
+        setHalaman(halaman);
+        setIsbn(isbn);
     }
     
-    public void setHalaman(int halaman) {
+    public void setHalaman(String halaman) {
         this.halaman = halaman;
     }
 
@@ -16,7 +18,7 @@ public class Buku extends Koleksi{
         this.isbn = isbn;
     }
 
-    public int getHalaman() {
+    public String getHalaman() {
         return halaman;
     }
 

@@ -1,19 +1,22 @@
 package Perpustakaan.Classes;
 
-public class Majalah extends Koleksi{
-    protected int volume;
-    protected int seri;
+public class Majalah extends Koleksi {
+    protected String volume;
+    protected String seri;
     protected String issn;
 
-    Majalah(String id_koleksi, String judul, String penerbit, boolean status) {
-        super(id_koleksi, judul, penerbit, status);
+    public Majalah(String judul, String penerbit, String issn, String volume, String seri) {
+        super(judul, penerbit);
+        setVolume(volume);
+        setSeri(seri);
+        setIssn(issn);
     }
 
-    public void setVolume(int volume) {
+    public void setVolume(String volume) {
         this.volume = volume;
     }
 
-    public void setSeri(int seri) {
+    public void setSeri(String seri) {
         this.seri = seri;
     }
 
@@ -21,19 +24,19 @@ public class Majalah extends Koleksi{
         this.issn = issn;
     }
 
-    public int getVolume() {
+    public String getVolume() {
         return volume;
     }
 
-    public int getSeri() {
+    public String getSeri() {
         return seri;
     }
 
     public String getIssn() {
         return issn;
     }
-    
+
     public String toString() {
-        return super.toString()+" Volume "+volume+" Seri "+seri+" ISSN "+issn;
+        return super.toString() + " Volume " + volume + " Seri " + seri + " ISSN " + issn;
     }
 }

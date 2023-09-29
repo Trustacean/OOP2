@@ -6,8 +6,7 @@ public class Peminjam {
     protected String alamat;
     protected String mak_pinjam;
 
-    Peminjam(String id_peminjam, String nama, String alamat, String mak_pinjam) {
-        this.id_peminjam = id_peminjam;
+    public Peminjam(String nama, String alamat, String mak_pinjam) {
         this.nama = nama;
         this.alamat = alamat;
         this.mak_pinjam = mak_pinjam;

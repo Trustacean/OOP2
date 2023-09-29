@@ -1,10 +1,11 @@
 package Perpustakaan.Classes;
 
-public class Mahasiswa extends Peminjam{
+public class Mahasiswa extends Peminjam {
     protected String nim;
 
-    Mahasiswa(String id_peminjam, String nama, String alamat, String mak_pinjam) {
-        super(id_peminjam, nama, alamat, mak_pinjam);
+    public Mahasiswa(String nama, String alamat, String nim, String mak_pinjam) {
+        super(nama, alamat, mak_pinjam);
+        setNim(nim);
     }
 
     public void setNim(String nim) {
@@ -14,8 +15,8 @@ public class Mahasiswa extends Peminjam{
     public String getNim() {
         return nim;
     }
-    
+
     public String toString() {
-        return super.toString()+" NIM: " + nim;
+        return super.toString() + " NIM: " + nim;
     }
 }

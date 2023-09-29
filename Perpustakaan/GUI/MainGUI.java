@@ -19,7 +19,10 @@ public class MainGUI implements ActionListener {
             bukuItem = new JMenuItem("Buku"),
             diskItem = new JMenuItem("Disk"),
             majalahItem = new JMenuItem("Majalah");
-    JPanel contentPane = new JPanel();
+    JPanel panelContainer = new JPanel(),
+            mainPanel = new JPanel();
+    JLabel title = new JLabel("PERPUSTAKAAN");
+    CardLayout cl = new CardLayout();
     JFrame frame = new JFrame();
 
     public MainGUI() {
@@ -39,17 +42,24 @@ public class MainGUI implements ActionListener {
         menubar.add(tampilMenu);
         menubar.add(helpMenu);
 
-        contentPane.setLayout(new CardLayout());
-        contentPane.add(new RegisterGUI(contentPane, this, false),"Peminjam");
-        contentPane.add(new RegisterGUI(contentPane, this, true), "Koleksi");
 
-        frame.setJMenuBar(menubar);
+        panelContainer.setLayout(cl);
+        panelContainer.add(mainPanel, "mainPanel");
+        panelContainer.add(new RegisterGUI(frame,false), "peminjamItem");
+        panelContainer.add(new RegisterGUI(frame,true), "koleksiItem");
+
+
+        cl.show(panelContainer,"mainPanel");
+        mainPanel.setLayout(null);
+        mainPanel.add(title);
+        title.setBounds(200, 25, 100, 25);
+
         frame.setTitle("Perpustakaan");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(475, 600);
+        frame.setSize(500, 600);
+        frame.setJMenuBar(menubar);
         frame.setResizable(false);
-        frame.setLayout(null);
-
+        frame.add(panelContainer);
         frame.setVisible(true);
     }
 
@@ -60,11 +70,11 @@ public class MainGUI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == peminjamItem) {
-            CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-            cardLayout.show(contentPane,"Peminjam");
+            cl.show(panelContainer, "peminjamItem");
             System.out.println("e");
         }
         if (e.getSource() == koleksiItem) {
+            cl.show(panelContainer, "koleksiItem");
             System.out.println("f");
         }
     }

@@ -1,11 +1,13 @@
 package Perpustakaan.Classes;
 
-public class Disk extends Koleksi{
+public class Disk extends Koleksi {
     protected String format;
     protected String isbn;
 
-    Disk(String id_koleksi, String judul, String penerbit, boolean status) {
-        super(id_koleksi, judul, penerbit, status);
+    public Disk(String judul, String penerbit, String isbn, String format) {
+        super(judul, penerbit);
+        setFormat(format);
+        setIsbn(isbn);
     }
 
     public void setFormat(String format) {
@@ -25,6 +27,6 @@ public class Disk extends Koleksi{
     }
 
     public String toString() {
-        return super.toString()+" Format: "+format+" ISBN: " + isbn;
+        return super.toString() + " Format: " + format + " ISBN: " + isbn;
     }
 }

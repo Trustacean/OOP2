@@ -1,15 +1,14 @@
-                       package Perpustakaan.Classes;
+package Perpustakaan.Classes;
+
 public class Koleksi {
     protected String id_koleksi;
     protected String judul;
     protected String penerbit;
     protected boolean status;
 
-    Koleksi(String id_koleksi, String judul, String penerbit, boolean status) {
-        this.id_koleksi = id_koleksi;
+    Koleksi(String judul, String penerbit) {
         this.judul = judul;
         this.penerbit = penerbit;
-        this.status = status;
     } 
 
     public void setId_koleksi(String id_koleksi) {
