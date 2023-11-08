@@ -3,8 +3,8 @@ package Perpustakaan.Classes;
 public class Umum extends Peminjam {
     protected String nik;
 
-    public Umum(String nama, String alamat, String nik, String mak_pinjam) {
-        super(nama, alamat, mak_pinjam);
+    public Umum(String id_peminjam, String nama, String alamat, String nik, String mak_pinjam) {
+        super(id_peminjam, nama, alamat, mak_pinjam);
         setNik(nik);
     }
 

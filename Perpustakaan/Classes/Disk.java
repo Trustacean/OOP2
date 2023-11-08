@@ -4,8 +4,8 @@ public class Disk extends Koleksi {
     protected String format;
     protected String isbn;
 
-    public Disk(String judul, String penerbit, String isbn, String format) {
-        super(judul, penerbit);
+    public Disk(String id_koleksi,String judul, String penerbit, String isbn, String format) {
+        super(id_koleksi,judul, penerbit);
         setFormat(format);
         setIsbn(isbn);
     }

@@ -3,8 +3,8 @@ package Perpustakaan.Classes;
 public class Mahasiswa extends Peminjam {
     protected String nim;
 
-    public Mahasiswa(String nama, String alamat, String nim, String mak_pinjam) {
-        super(nama, alamat, mak_pinjam);
+    public Mahasiswa(String id_peminjam, String nama, String alamat, String nim, String mak_pinjam) {
+        super(id_peminjam, nama, alamat, mak_pinjam);
         setNim(nim);
     }
 

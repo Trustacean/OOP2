@@ -1,12 +1,19 @@
 package Perpustakaan.Classes;
 
-public class Koleksi {
+import java.io.Serializable;
+
+public class Koleksi implements Serializable {
     protected String id_koleksi;
     protected String judul;
     protected String penerbit;
     protected boolean status;
 
-    Koleksi(String judul, String penerbit) {
+    public Koleksi() {
+
+    }
+
+    public Koleksi(String id_koleksi, String judul, String penerbit) {
+        this.id_koleksi = id_koleksi;
         this.judul = judul;
         this.penerbit = penerbit;
     } 
@@ -40,6 +47,6 @@ public class Koleksi {
     }
 
     public String toString() {
-        return "Judul: " + judul + ", Penerbit: " + penerbit;
+        return "ID"+id_koleksi +"Judul: " + judul + " Penerbit: " + penerbit;
     }
 }

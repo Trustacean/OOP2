@@ -1,15 +1,29 @@
 package Perpustakaan.Classes;
+import java.io.Serializable;
 
-public class Peminjam {
+public class Peminjam implements Serializable {
     protected String id_peminjam;
     protected String nama;
     protected String alamat;
     protected String mak_pinjam;
 
-    public Peminjam(String nama, String alamat, String mak_pinjam) {
+    public Peminjam() {
+        
+    }
+
+    public Peminjam(String id_peminjam, String nama, String alamat, String mak_pinjam) {
+        this.id_peminjam = id_peminjam;
         this.nama = nama;
         this.alamat = alamat;
         this.mak_pinjam = mak_pinjam;
+    }
+
+    public void setId_peminjam(String id_peminjam) {
+        this.id_peminjam = id_peminjam;
+    }
+
+    public String getId_peminjam() {
+        return id_peminjam;
     }
 
     public void setNama(String nama) {
@@ -31,12 +45,12 @@ public class Peminjam {
     public String getAlamat() {
         return alamat;
     }
-    
+
     public String getMak_pinjam() {
         return mak_pinjam;
     }
-    
+
     public String toString() {
-        return "Nama: "+nama+" Alamat: "+alamat;
+        return "ID Peminjam: " + id_peminjam + " Nama: " + nama + " Alamat: " + alamat + " Maks Pinjam: " + mak_pinjam;
     }
 }

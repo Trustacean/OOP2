@@ -1,11 +1,11 @@
 package Perpustakaan.Classes;
 
-public class Buku extends Koleksi{
+public class Buku extends Koleksi {
     protected String halaman;
     protected String isbn;
     
-    public Buku(String judul, String penerbit, String isbn, String halaman) {
-        super(judul, penerbit);
+    public Buku(String id_koleksi, String judul, String penerbit, String isbn, String halaman) {
+        super(id_koleksi,judul, penerbit);
         setHalaman(halaman);
         setIsbn(isbn);
     }
